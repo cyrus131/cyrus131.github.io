@@ -186,7 +186,16 @@ a:hover { text-decoration: underline; }
 .sidebar-name { margin: 0 0 .4rem; font-size: 1.2rem; }
 .sidebar-bio { color: var(--text-muted); font-size: .92rem; margin: 0 0 1.1rem; }
 .sidebar-links { list-style: none; margin: 0; padding: 0; }
-.sidebar-links li { margin: .5rem 0; }
+.sidebar-links li { margin: .7rem 0; }
+.link-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  margin-bottom: .1rem;
+}
 .sidebar-links a {
   color: var(--text);
   font-size: .85rem;
