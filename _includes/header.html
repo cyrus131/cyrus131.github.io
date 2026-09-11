@@ -1,13 +1,27 @@
 <header class="site-header">
-  <div class="wrap">
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+  <div class="nav-wrap">
+    <a class="site-title" href="{{ "/" | relative_url }}">
+      <span class="site-logo" aria-hidden="true">{{ site.author | slice: 0, 1 | upcase }}</span>
+      {{ site.title }}
+    </a>
     <nav class="site-nav">
-      <a href="{{ "/" | relative_url }}">Home</a>
-      <a href="{{ "/categories/" | relative_url }}">Categories</a>
-      <a href="{{ "/about/" | relative_url }}">About</a>
-      {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
-      <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
-      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">◐</button>
+      {% for cat in site.nav_categories %}
+      <a href="{{ "/categories/" | relative_url }}#{{ cat.slug }}">{{ cat.name }}</a>
+      {% endfor %}
+      <a href="{{ "/categories/" | relative_url }}">All Categories</a>
     </nav>
+    <div class="nav-tools">
+      <button id="search-toggle" aria-label="Search" aria-expanded="false" aria-controls="search-panel" title="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">◐</button>
+    </div>
+  </div>
+
+  <div id="search-panel" class="search-panel" hidden>
+    <div class="nav-wrap">
+      <input id="search-input" type="search" placeholder="Tìm bài viết theo tiêu đề, tag, category..." autocomplete="off">
+      <ul id="search-results" class="search-results"></ul>
+    </div>
   </div>
 </header>

@@ -1,17 +1,42 @@
 # ------------------------------------------------
 # Site settings — edit these to personalize your blog
 # ------------------------------------------------
-title: "Cyrus's Blog"
+title: "Cyrus"
 tagline: "Reverse Engineering & Malware Analysis notes"
 description: >-
   Bài viết phân tích reverse engineering, malware, ransomware và CTF writeups.
 author: "Cyrus"
-email: ""
-github_username: cyrus131
-# twitter_username: ""
+author_bio: "Malware Analysis & Reverse Engineering Adventures."
 
 url: "https://cyrus131.github.io"
 baseurl: ""
+
+# ------------------------------------------------
+# Sidebar — social links (để trống để ẩn link tương ứng)
+# ------------------------------------------------
+email: ""
+twitter_username: ""
+linkedin_username: ""
+github_username: cyrus131
+coffee_url: ""
+
+# Ảnh avatar tuỳ chọn, ví dụ: /assets/images/avatar.jpg
+# Nếu để trống, sidebar sẽ hiện avatar chữ cái đầu tự sinh.
+avatar_image: ""
+
+# ------------------------------------------------
+# Navbar — danh mục chính hiển thị trên top nav
+# slug phải khớp với category dùng trong front matter của bài viết
+# ------------------------------------------------
+nav_categories:
+  - name: "Malware Analysis"
+    slug: "malware-analysis"
+  - name: "Binary Exploitation"
+    slug: "binary-exploitation"
+  - name: "CTF Writeups"
+    slug: "ctf-writeups"
+  - name: "Tutorials"
+    slug: "tutorials"
 
 # ------------------------------------------------
 # Build settings

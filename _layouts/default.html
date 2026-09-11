@@ -3,11 +3,14 @@
 <head>
   {% include head.html %}
 </head>
-<body>
+<body data-baseurl="{{ site.baseurl }}">
   {% include header.html %}
-  <main class="wrap page-content">
-    {{ content }}
-  </main>
+  <div class="body-wrap">
+    {% include sidebar.html %}
+    <main class="page-content">
+      {{ content }}
+    </main>
+  </div>
   {% include footer.html %}
 </body>
 </html>

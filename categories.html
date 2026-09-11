@@ -1,12 +1,35 @@
 ---
 layout: page
-title: Categories
+title: All Categories
 permalink: /categories/
 ---
-{% assign categories = site.categories | sort %}
-{% for category in categories %}
+{% assign known_slugs = "" | split: "," %}
+
+{% for cat in site.nav_categories %}
+{% assign known_slugs = known_slugs | push: cat.slug %}
+{% assign cat_posts = site.categories[cat.slug] %}
+<section class="category-block" id="{{ cat.slug }}">
+  <h2 class="category-title">{{ cat.name }} <span class="count">({{ cat_posts.size }})</span></h2>
+  {% if cat_posts.size > 0 %}
+  <ul class="post-list compact">
+    {% for post in cat_posts %}
+    <li class="post-item">
+      <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="category-empty">Chưa có bài viết nào.</p>
+  {% endif %}
+</section>
+{% endfor %}
+
+{% assign other_categories = site.categories | sort %}
+{% for category in other_categories %}
 {% assign cat_name = category | first %}
 {% assign cat_posts = category | last %}
+{% unless known_slugs contains cat_name %}
 <section class="category-block" id="{{ cat_name | slugify }}">
   <h2 class="category-title">{{ cat_name }} <span class="count">({{ cat_posts.size }})</span></h2>
   <ul class="post-list compact">
@@ -18,4 +41,5 @@ permalink: /categories/
     {% endfor %}
   </ul>
 </section>
+{% endunless %}
 {% endfor %}

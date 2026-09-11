@@ -1,0 +1,20 @@
+<aside class="sidebar">
+  <div class="sidebar-inner">
+    {% if site.avatar_image != "" %}
+    <img class="avatar" src="{{ site.avatar_image | relative_url }}" alt="{{ site.author }}">
+    {% else %}
+    <div class="avatar avatar-initial" aria-hidden="true">{{ site.author | slice: 0, 1 | upcase }}</div>
+    {% endif %}
+
+    <h2 class="sidebar-name">{{ site.author }}</h2>
+    {% if site.author_bio != "" %}<p class="sidebar-bio">{{ site.author_bio }}</p>{% endif %}
+
+    <ul class="sidebar-links">
+      {% if site.email != "" %}<li><a href="mailto:{{ site.email }}">Email</a></li>{% endif %}
+      {% if site.twitter_username != "" %}<li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter</a></li>{% endif %}
+      {% if site.linkedin_username != "" %}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
+      {% if site.github_username != "" %}<li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a></li>{% endif %}
+      {% if site.coffee_url != "" %}<li><a href="{{ site.coffee_url }}" target="_blank" rel="noopener">Buy Me a Coffee</a></li>{% endif %}
+    </ul>
+  </div>
+</aside>

@@ -1,6 +1,6 @@
 ---
 title: "[Template] Phân tích một crackme đơn giản"
-categories: [reverse-engineering]
+categories: [binary-exploitation]
 tags: [x86, ida-pro, crackme]
 ---
 
