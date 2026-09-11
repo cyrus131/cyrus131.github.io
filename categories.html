@@ -1,0 +1,21 @@
+---
+layout: page
+title: Categories
+permalink: /categories/
+---
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+{% assign cat_name = category | first %}
+{% assign cat_posts = category | last %}
+<section class="category-block" id="{{ cat_name | slugify }}">
+  <h2 class="category-title">{{ cat_name }} <span class="count">({{ cat_posts.size }})</span></h2>
+  <ul class="post-list compact">
+    {% for post in cat_posts %}
+    <li class="post-item">
+      <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

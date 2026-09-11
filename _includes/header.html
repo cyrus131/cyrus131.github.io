@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav">
+      <a href="{{ "/" | relative_url }}">Home</a>
+      <a href="{{ "/categories/" | relative_url }}">Categories</a>
+      <a href="{{ "/about/" | relative_url }}">About</a>
+      {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+      <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+      <button id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark theme">◐</button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,22 @@
+---
+layout: default
+title: Home
+---
+<div class="home-intro">
+  <p>{{ site.tagline }}</p>
+</div>
+
+{% assign paginated_posts = paginator.posts | default: site.posts %}
+{% include post-list.html posts=paginated_posts %}
+
+{% if paginator.total_pages > 1 %}
+<nav class="pagination">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>
+  {% endif %}
+  <span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>
+  {% endif %}
+</nav>
+{% endif %}

@@ -1,0 +1,55 @@
+# ------------------------------------------------
+# Site settings — edit these to personalize your blog
+# ------------------------------------------------
+title: "Cyrus's Blog"
+tagline: "Reverse Engineering & Malware Analysis notes"
+description: >-
+  Bài viết phân tích reverse engineering, malware, ransomware và CTF writeups.
+author: "Cyrus"
+email: ""
+github_username: cyrus131
+# twitter_username: ""
+
+url: "https://cyrus131.github.io"
+baseurl: ""
+
+# ------------------------------------------------
+# Build settings
+# ------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
+
+paginate: 8
+paginate_path: "/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - .github

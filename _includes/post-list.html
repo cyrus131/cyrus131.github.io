@@ -1,0 +1,14 @@
+<ul class="post-list">
+  {% for post in include.posts %}
+  <li class="post-item">
+    <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% if post.categories.size > 0 %}
+    <span class="post-cats">
+      {% for cat in post.categories %}<a class="tag" href="{{ "/categories/" | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>{% endfor %}
+    </span>
+    {% endif %}
+    {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 32 }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
