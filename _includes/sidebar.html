@@ -10,11 +10,20 @@
     {% if site.author_bio != "" %}<p class="sidebar-bio">{{ site.author_bio }}</p>{% endif %}
 
     <ul class="sidebar-links">
-      {% if site.email != "" %}<li><a href="mailto:{{ site.email }}">Email</a></li>{% endif %}
-      {% if site.twitter_username != "" %}<li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">Twitter</a></li>{% endif %}
-      {% if site.linkedin_username != "" %}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
-      {% if site.github_username != "" %}<li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a></li>{% endif %}
-      {% if site.coffee_url != "" %}<li><a href="{{ site.coffee_url }}" target="_blank" rel="noopener">Buy Me a Coffee</a></li>{% endif %}
+      {% if site.email != "" %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+      {% if site.twitter_username != "" %}
+      {% assign twitter_url = "https://twitter.com/" | append: site.twitter_username %}
+      <li><a href="{{ twitter_url }}" target="_blank" rel="noopener">{{ twitter_url | remove: "https://" }}</a></li>
+      {% endif %}
+      {% if site.linkedin_username != "" %}
+      {% assign linkedin_url = "https://www.linkedin.com/in/" | append: site.linkedin_username %}
+      <li><a href="{{ linkedin_url }}" target="_blank" rel="noopener">{{ linkedin_url | remove: "https://" }}</a></li>
+      {% endif %}
+      {% if site.github_username != "" %}
+      {% assign github_url = "https://github.com/" | append: site.github_username %}
+      <li><a href="{{ github_url }}" target="_blank" rel="noopener">{{ github_url | remove: "https://" }}</a></li>
+      {% endif %}
+      {% if site.coffee_url != "" %}<li><a href="{{ site.coffee_url }}" target="_blank" rel="noopener">{{ site.coffee_url | remove: "https://" | remove: "http://" }}</a></li>{% endif %}
     </ul>
   </div>
 </aside>

@@ -187,7 +187,12 @@ a:hover { text-decoration: underline; }
 .sidebar-bio { color: var(--text-muted); font-size: .92rem; margin: 0 0 1.1rem; }
 .sidebar-links { list-style: none; margin: 0; padding: 0; }
 .sidebar-links li { margin: .5rem 0; }
-.sidebar-links a { color: var(--text); font-size: .95rem; }
+.sidebar-links a {
+  color: var(--text);
+  font-size: .85rem;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
 .sidebar-links a:hover { color: var(--accent); text-decoration: none; }
 
 .page-content { min-width: 0; padding-top: 2.25rem; }
