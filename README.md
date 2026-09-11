@@ -3,7 +3,7 @@
 Blog cá nhân về Reverse Engineering & Malware Analysis — [Jekyll](https://jekyllrb.com/), host trên GitHub Pages.
 
 Live: https://cyrus131.github.io
-Hướng dẫn đầy đủ (đăng bài, đổi avatar/favicon/social link...): xem bài [Hướng dẫn đăng bài & tuỳ chỉnh blog](https://cyrus131.github.io/tutorials/2026/09/11/huong-dan-su-dung-blog/).
+Hướng dẫn đầy đủ (đăng bài, đổi avatar/favicon/social link...): xem file [`_drafts/huong-dan-su-dung-blog.md`](_drafts/huong-dan-su-dung-blog.md) (không publish lên site, chỉ để tham khảo).
 
 ## Đăng bài mới
 
