@@ -1,41 +1,41 @@
 # cyrus131.github.io
 
-Blog cá nhân về Reverse Engineering & Malware Analysis, xây bằng [Jekyll](https://jekyllrb.com/) và host trên GitHub Pages.
+Blog cá nhân về Reverse Engineering & Malware Analysis — [Jekyll](https://jekyllrb.com/), host trên GitHub Pages.
 
-## Chạy thử ở local
+Live: https://cyrus131.github.io
+Hướng dẫn đầy đủ (đăng bài, đổi avatar/favicon/social link...): xem bài [Hướng dẫn đăng bài & tuỳ chỉnh blog](https://cyrus131.github.io/tutorials/2026/09/11/huong-dan-su-dung-blog/).
 
-Cần cài [Ruby](https://www.ruby-lang.org/en/downloads/) trước (bản ổn định gần nhất).
+## Đăng bài mới
+
+Tạo file `_posts/YYYY-MM-DD-ten-bai.md`:
+
+```yaml
+---
+title: "Tiêu đề bài viết"
+categories: [malware-analysis]   # hoặc: binary-exploitation, ctf-writeups, tutorials
+tags: [windows, x86, ida-pro]
+---
+
+Nội dung Markdown...
+```
+
+Push lên `main` là site tự build lại (~1 phút).
+
+```bash
+git add _posts/ten-bai.md
+git commit -m "Add post: ..."
+git push origin main
+```
+
+## Chạy thử local (tuỳ chọn)
 
 ```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-Mở [http://localhost:4000](http://localhost:4000).
+Mở http://localhost:4000
 
-## Viết bài mới
+## Tuỳ chỉnh nhanh
 
-Tạo file trong `_posts/` theo định dạng `YYYY-MM-DD-ten-bai-viet.md`:
-
-```yaml
----
-title: "Tiêu đề bài viết"
-categories: [reverse-engineering]
-tags: [windows, x86, ida-pro]
----
-
-Nội dung bài viết (Markdown)...
-```
-
-## Deploy
-
-Repo này tên `cyrus131.github.io` nên GitHub Pages tự build và publish tại
-`https://cyrus131.github.io` mỗi khi push lên nhánh `main`.
-
-Cần bật một lần trong **Settings → Pages → Build and deployment → Source: Deploy from a branch → main / (root)**.
-
-## Tuỳ chỉnh
-
-- `_config.yml`: tên site, tagline, author, mô tả.
-- `about.md`: trang giới thiệu bản thân.
-- `assets/css/main.css`: giao diện (đã hỗ trợ dark/light mode toggle).
+Tất cả trong `_config.yml`: tên/bio, social link (`github_username`, `linkedin_username`, ...), avatar/favicon (`avatar_image`, `favicon_image`), danh mục navbar (`nav_categories`). Màu sắc/giao diện sửa ở `assets/css/main.css` (biến `--accent` trong `:root`).
