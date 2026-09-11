@@ -24,6 +24,10 @@ coffee_url: ""
 # Nếu để trống, sidebar sẽ hiện avatar chữ cái đầu tự sinh.
 avatar_image: ""
 
+# Favicon tuỳ chọn, ví dụ: /assets/images/favicon.png
+# Nếu để trống, favicon sẽ tự sinh theo chữ cái đầu của "author" (đồng bộ màu với avatar).
+favicon_image: ""
+
 # ------------------------------------------------
 # Navbar — danh mục chính hiển thị trên top nav
 # slug phải khớp với category dùng trong front matter của bài viết
