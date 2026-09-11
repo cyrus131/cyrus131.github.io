@@ -197,6 +197,7 @@ a:hover { text-decoration: underline; }
   margin-bottom: .1rem;
 }
 .sidebar-links a {
+  display: block;
   color: var(--text);
   font-size: .85rem;
   word-break: break-all;
